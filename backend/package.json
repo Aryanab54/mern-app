@@ -3,7 +3,26 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed:admin": "node scripts/seedAdmin.js",
+    "db:generate": "npx prisma generate",
+    "db:migrate": "npx prisma migrate dev",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:utils": "jest tests/utils.test.js",
+    "test:integration": "jest tests/integration.test.js",
+    "test:auth": "jest tests/auth-api.test.js",
+    "test:agents": "jest tests/agent-api.test.js",
+    "test:leads": "jest tests/lead-api.test.js",
+    "test:assignments": "jest tests/assignment-api.test.js",
+    "test:api": "jest tests/*-api.test.js",
+    "test:file-upload": "jest tests/file-upload.test.js",
+    "test:csv-parser": "jest tests/csv-parser.test.js",
+    "test:auth-middleware": "jest tests/auth-middleware.test.js",
+    "test:lead-service": "jest tests/lead-service.test.js",
+    "test:missing": "jest tests/file-upload.test.js tests/csv-parser.test.js tests/auth-middleware.test.js tests/lead-service.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,5 +41,10 @@
     "multer": "^2.0.2",
     "prisma": "^6.16.2",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "jest": "^30.1.3",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
   }
 }

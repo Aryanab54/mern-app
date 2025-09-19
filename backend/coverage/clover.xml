@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1758318473729" clover="3.2.0">
+  <project timestamp="1758318473729" name="All files">
+    <metrics statements="286" coveredstatements="267" conditionals="105" coveredconditionals="82" methods="55" coveredmethods="53" elements="446" coveredelements="402" complexity="0" loc="286" ncloc="286" packages="5" files="16" classes="16"/>
+    <package name="agent">
+      <metrics statements="39" coveredstatements="36" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
+      <file name="agent.controller.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/agent/agent.controller.js">
+        <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+      </file>
+      <file name="agent.route.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/agent/agent.route.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+      </file>
+      <file name="agent.service.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/agent/agent.service.js">
+        <metrics statements="16" coveredstatements="15" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="75" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="83" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="assignment">
+      <metrics statements="32" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <file name="assignment.controller.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/assignment/assignment.controller.js">
+        <metrics statements="14" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="55" count="7" type="stmt"/>
+      </file>
+      <file name="assignment.route.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/assignment/assignment.route.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+      </file>
+      <file name="assignment.service.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/assignment/assignment.service.js">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="55" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="lead">
+      <metrics statements="66" coveredstatements="63" conditionals="10" coveredconditionals="7" methods="10" coveredmethods="10"/>
+      <file name="lead.controller.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/lead/lead.controller.js">
+        <metrics statements="16" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="63" count="7" type="stmt"/>
+      </file>
+      <file name="lead.route.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/lead/lead.route.js">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+      </file>
+      <file name="lead.service.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/lead/lead.service.js">
+        <metrics statements="40" coveredstatements="40" conditionals="8" coveredconditionals="6" methods="7" coveredmethods="7"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="20" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="38" count="16" type="stmt"/>
+        <line num="47" count="16" type="stmt"/>
+        <line num="60" count="16" type="stmt"/>
+        <line num="61" count="16" type="stmt"/>
+        <line num="65" count="5" type="stmt"/>
+        <line num="69" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="70" count="5" type="stmt"/>
+        <line num="73" count="5" type="stmt"/>
+        <line num="77" count="8" type="stmt"/>
+        <line num="85" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="86" count="6" type="stmt"/>
+        <line num="88" count="6" type="stmt"/>
+        <line num="93" count="4" type="stmt"/>
+        <line num="104" count="4" type="stmt"/>
+        <line num="105" count="4" type="stmt"/>
+        <line num="106" count="5" type="stmt"/>
+        <line num="107" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="108" count="4" type="stmt"/>
+        <line num="113" count="5" type="stmt"/>
+        <line num="116" count="4" type="stmt"/>
+        <line num="120" count="5" type="stmt"/>
+        <line num="128" count="5" type="stmt"/>
+        <line num="132" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="login">
+      <metrics statements="25" coveredstatements="25" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="login.controller.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/login/login.controller.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+      </file>
+      <file name="login.route.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/login/login.route.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+      </file>
+      <file name="login.service.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/login/login.service.js">
+        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="42" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="124" coveredstatements="114" conditionals="87" coveredconditionals="68" methods="31" coveredmethods="29"/>
+      <file name="authentication.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/utils/authentication.js">
+        <metrics statements="41" coveredstatements="34" conditionals="46" coveredconditionals="34" methods="9" coveredmethods="8"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="7" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="54" type="cond" truecount="3" falsecount="1"/>
+        <line num="13" count="54" type="stmt"/>
+        <line num="14" count="54" type="stmt"/>
+        <line num="18" count="7" type="cond" truecount="3" falsecount="1"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="24" count="34" type="cond" truecount="3" falsecount="1"/>
+        <line num="28" count="34" type="stmt"/>
+        <line num="32" count="24" type="stmt"/>
+        <line num="33" count="24" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="41" count="35" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="35" type="cond" truecount="4" falsecount="0"/>
+        <line num="43" count="23" type="stmt"/>
+        <line num="44" count="23" type="cond" truecount="4" falsecount="0"/>
+        <line num="45" count="22" type="stmt"/>
+        <line num="49" count="13" type="cond" truecount="3" falsecount="1"/>
+        <line num="50" count="13" type="stmt"/>
+        <line num="55" count="35" type="stmt"/>
+        <line num="56" count="35" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="13" type="stmt"/>
+        <line num="59" count="22" type="stmt"/>
+        <line num="60" count="22" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="63" count="19" type="stmt"/>
+        <line num="64" count="19" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="78" count="63" type="stmt"/>
+        <line num="79" count="18" type="cond" truecount="3" falsecount="1"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="82" count="18" type="cond" truecount="1" falsecount="1"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="85" count="18" type="stmt"/>
+        <line num="89" count="9" type="stmt"/>
+      </file>
+      <file name="csvParser.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/utils/csvParser.js">
+        <metrics statements="37" coveredstatements="37" conditionals="21" coveredconditionals="20" methods="12" coveredmethods="12"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="10" count="21" type="stmt"/>
+        <line num="12" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="22" count="15" type="stmt"/>
+        <line num="23" count="15" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="29" count="28" type="cond" truecount="4" falsecount="0"/>
+        <line num="30" count="25" type="stmt"/>
+        <line num="38" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="5" type="stmt"/>
+        <line num="41" count="9" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="55" count="5" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="58" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="59" count="7" type="stmt"/>
+        <line num="65" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="69" count="4" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="76" count="22" type="stmt"/>
+        <line num="78" count="10" type="stmt"/>
+        <line num="79" count="30" type="stmt"/>
+        <line num="80" count="30" type="stmt"/>
+        <line num="83" count="10" type="stmt"/>
+        <line num="87" count="10" type="stmt"/>
+      </file>
+      <file name="multer.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/utils/multer.js">
+        <metrics statements="20" coveredstatements="19" conditionals="8" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="11" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="29" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="38" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="44" count="6" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
+      </file>
+      <file name="validation.js" path="/Users/aryanbhatt/Desktop/practice/projects/mern_app/backend/src/utils/validation.js">
+        <metrics statements="26" coveredstatements="24" conditionals="12" coveredconditionals="9" methods="7" coveredmethods="6"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
+        <line num="50" count="14" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="52" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
+        <line num="56" count="4" type="stmt"/>
+        <line num="61" count="7" type="stmt"/>
+        <line num="62" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="63" count="5" type="stmt"/>
+        <line num="64" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="67" count="5" type="stmt"/>
+        <line num="68" count="5" type="stmt"/>
+        <line num="72" count="7" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
