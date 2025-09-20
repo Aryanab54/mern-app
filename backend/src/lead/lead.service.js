@@ -106,11 +106,17 @@ class LeadService {
       const agentId = assignment.agent.id;
       if (!distribution[agentId]) {
         distribution[agentId] = {
-          agent: assignment.agent,
-          leads: []
+          agentId: assignment.agent.id,
+          agentName: assignment.agent.name,
+          lists: []
         };
       }
-      distribution[agentId].leads.push(assignment.lead);
+      distribution[agentId].lists.push({
+        firstName: assignment.lead.firstName,
+        phone: assignment.lead.phone,
+        notes: assignment.lead.notes,
+        assignedAt: assignment.createdAt
+      });
     });
 
     return Object.values(distribution);

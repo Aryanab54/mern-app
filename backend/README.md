@@ -43,6 +43,7 @@ npm run seed:admin
 Update `.env` file with your database credentials:
 ```env
 DATABASE_URL="mysql://username:password@localhost:3306/database_name"
+PORT=5001
 JWT_SECRET="your_super_secret_jwt_key"
 JWT_EXPIRES_IN="7d"
 ```

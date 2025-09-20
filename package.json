@@ -1,0 +1,19 @@
+{
+  "name": "mern-agent-management",
+  "version": "1.0.0",
+  "description": "MERN Stack Agent Management System",
+  "scripts": {
+    "setup": "node setup.js",
+    "test-connection": "node test-connection.js",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": ["mern", "react", "nodejs", "express", "mysql", "prisma"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^1.12.2"
+  }
+}

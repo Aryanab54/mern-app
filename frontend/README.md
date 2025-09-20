@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+# MERN Stack Frontend Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend application for the MERN stack project with admin login, agent management, and CSV file upload/distribution functionality.
+
+## Features
+
+1. **Admin User Login**
+   - JWT-based authentication
+   - Form validation with Formik and Yup
+   - Protected routes
+
+2. **Agent Management**
+   - Add new agents with validation
+   - View all agents in a table
+   - Mobile number with country code validation
+
+3. **CSV File Upload & Distribution**
+   - Upload CSV, XLS, XLSX files
+   - File format validation
+   - Automatic distribution among 5 agents
+   - Progress tracking during upload
+
+4. **Distribution View**
+   - View distributed lists per agent
+   - Accordion-style interface
+   - Distribution summary
+
+## Tech Stack
+
+- **React 19.1.1** - Frontend framework
+- **React Router DOM** - Client-side routing
+- **React Bootstrap** - UI components
+- **Formik & Yup** - Form handling and validation
+- **Axios** - HTTP client
+- **Bootstrap 5** - CSS framework
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+- Backend API running on port 5001
+
+## Installation & Setup
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Environment Configuration:**
+   Create a `.env` file in the root directory:
+   ```
+   REACT_APP_API_URL=http://localhost:5001/api
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+4. **Access the application:**
+   Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/
+│   ├── Navbar.js          # Navigation component
+│   └── ProtectedRoute.js  # Route protection wrapper
+├── context/
+│   └── AuthContext.js     # Authentication context
+├── pages/
+│   ├── Login.js           # Login page
+│   ├── Dashboard.js       # Main dashboard
+│   ├── Agents.js          # Agent management
+│   ├── Upload.js          # File upload
+│   └── Distribution.js    # View distributed lists
+├── services/
+│   └── api.js             # API service layer
+├── App.js                 # Main app component
+├── App.css                # Global styles
+└── index.js               # App entry point
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API Integration
 
-### `npm test`
+The frontend communicates with the backend through the following endpoints:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `POST /api/auth/login` - User authentication
+- `GET /api/agents` - Fetch all agents
+- `POST /api/agents` - Create new agent
+- `POST /api/lists/upload` - Upload and distribute CSV
+- `GET /api/lists/distributed` - Get distributed lists
 
-### `npm run build`
+## Features in Detail
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Authentication
+- JWT token stored in localStorage
+- Automatic token inclusion in API requests
+- Protected routes redirect to login if not authenticated
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Form Validation
+- Email format validation
+- Mobile number with country code format (+1234567890)
+- Password minimum length requirements
+- File type validation (CSV, XLS, XLSX only)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### File Upload
+- Drag & drop support
+- Progress bar during upload
+- File size display
+- Format validation before upload
 
-### `npm run eject`
+### Responsive Design
+- Bootstrap-based responsive layout
+- Mobile-friendly interface
+- Accessible components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Error Handling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- API error messages displayed to users
+- Form validation errors
+- File upload error handling
+- Network error handling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Browser Support
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-## Learn More
+## Development Notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Uses React 19 with modern hooks
+- Context API for state management
+- Axios interceptors for token management
+- Bootstrap components for consistent UI
+- Formik for form state management
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Troubleshooting
 
-### Code Splitting
+1. **CORS Issues:** Ensure backend allows requests from localhost:3000
+2. **API Connection:** Verify backend is running on port 5001
+3. **Token Issues:** Clear localStorage and login again
+4. **File Upload:** Check file format and size limits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Future Enhancements
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Real-time notifications
+- Bulk agent operations
+- Advanced file validation
+- Export functionality
+- User role management
