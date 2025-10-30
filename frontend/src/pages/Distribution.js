@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Table, Badge, Accordion, Spinner, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Table, Badge, Accordion, Spinner, Alert, Form, InputGroup } from 'react-bootstrap';
 import { listAPI } from '../services/api';
 
 const Distribution = () => {
   const [distributedLists, setDistributedLists] = useState([]);
+  const [filteredLists, setFilteredLists] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterAgent, setFilterAgent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -15,12 +18,46 @@ const Distribution = () => {
     try {
       const response = await listAPI.getDistributed();
       const data = response.data.data || response.data;
-      setDistributedLists(Array.isArray(data) ? data : []);
+      const listsData = Array.isArray(data) ? data : [];
+      setDistributedLists(listsData);
+      setFilteredLists(listsData);
     } catch (error) {
       setError('Failed to fetch distributed lists');
       setDistributedLists([]);
+      setFilteredLists([]);
     }
     setLoading(false);
+  };
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    applyFilters(term, filterAgent);
+  };
+
+  const handleAgentFilter = (agent) => {
+    setFilterAgent(agent);
+    applyFilters(searchTerm, agent);
+  };
+
+  const applyFilters = (search, agent) => {
+    let filtered = distributedLists;
+
+    if (agent) {
+      filtered = filtered.filter(list => list.agentName === agent);
+    }
+
+    if (search) {
+      filtered = filtered.map(agentData => ({
+        ...agentData,
+        lists: agentData.lists.filter(item => 
+          item.firstName.toLowerCase().includes(search.toLowerCase()) ||
+          item.phone.includes(search) ||
+          (item.notes && item.notes.toLowerCase().includes(search.toLowerCase()))
+        )
+      })).filter(agentData => agentData.lists.length > 0);
+    }
+
+    setFilteredLists(filtered);
   };
 
   if (loading) {
@@ -44,7 +81,8 @@ const Distribution = () => {
     );
   }
 
-  const totalItems = Array.isArray(distributedLists) ? distributedLists.reduce((acc, agent) => acc + (agent.lists?.length || 0), 0) : 0;
+  const totalItems = Array.isArray(filteredLists) ? filteredLists.reduce((acc, agent) => acc + (agent.lists?.length || 0), 0) : 0;
+  const allAgents = distributedLists.map(agent => agent.agentName);
 
   return (
     <div className="bg-light min-vh-100">
@@ -54,12 +92,49 @@ const Distribution = () => {
           <p className="text-muted">View how lists are distributed among your agents</p>
         </div>
         
-        {distributedLists.length === 0 ? (
+        <Card className="border-0 shadow-sm mb-3">
+          <Card.Body className="py-3">
+            <Row className="align-items-center">
+              <Col md={6}>
+                <InputGroup>
+                  <InputGroup.Text className="bg-light border-end-0">
+                    <i className="fas fa-search text-muted"></i>
+                  </InputGroup.Text>
+                  <Form.Control
+                    type="text"
+                    placeholder="Search by name, phone, or notes..."
+                    value={searchTerm}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    className="border-start-0"
+                  />
+                </InputGroup>
+              </Col>
+              <Col md={4}>
+                <Form.Select
+                  value={filterAgent}
+                  onChange={(e) => handleAgentFilter(e.target.value)}
+                >
+                  <option value="">All Agents</option>
+                  {allAgents.map(agent => (
+                    <option key={agent} value={agent}>{agent}</option>
+                  ))}
+                </Form.Select>
+              </Col>
+              <Col md={2} className="text-end">
+                <small className="text-muted">
+                  {totalItems} items
+                </small>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+
+        {filteredLists.length === 0 ? (
           <Card className="border-0 shadow-sm text-center py-5">
             <Card.Body>
               <i className="fas fa-inbox text-muted mb-3" style={{fontSize: '4rem'}}></i>
-              <h4 className="text-muted mb-2">No Distribution Data</h4>
-              <p className="text-muted mb-0">Upload a CSV file to see distribution results here.</p>
+              <h4 className="text-muted mb-2">{distributedLists.length === 0 ? 'No Distribution Data' : 'No Matching Results'}</h4>
+              <p className="text-muted mb-0">{distributedLists.length === 0 ? 'Upload a CSV file to see distribution results here.' : 'Try adjusting your search or filter criteria.'}</p>
             </Card.Body>
           </Card>
         ) : (
@@ -73,7 +148,7 @@ const Distribution = () => {
                       Distribution Summary
                     </h5>
                     <Row>
-                      {distributedLists.map((agent) => (
+                      {filteredLists.map((agent) => (
                         <Col md={6} lg={4} key={agent.agentId} className="mb-3">
                           <div className="d-flex align-items-center p-2 bg-light rounded">
                             <div className="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
@@ -110,7 +185,7 @@ const Distribution = () => {
               </Card.Header>
               <Card.Body className="p-0">
                 <Accordion flush>
-                  {distributedLists.map((agent, index) => (
+                  {filteredLists.map((agent, index) => (
                     <Accordion.Item eventKey={index.toString()} key={agent.agentId}>
                       <Accordion.Header>
                         <div className="d-flex align-items-center justify-content-between w-100 me-3">

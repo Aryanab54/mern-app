@@ -6,6 +6,8 @@ import { agentAPI } from '../services/api';
 
 const Agents = () => {
   const [agents, setAgents] = useState([]);
+  const [filteredAgents, setFilteredAgents] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -18,9 +20,25 @@ const Agents = () => {
   const fetchAgents = async () => {
     try {
       const response = await agentAPI.getAll();
-      setAgents(response.data.data || response.data);
+      const agentData = response.data.data || response.data;
+      setAgents(agentData);
+      setFilteredAgents(agentData);
     } catch (error) {
       setError('Failed to fetch agents');
+    }
+  };
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    if (!term) {
+      setFilteredAgents(agents);
+    } else {
+      const filtered = agents.filter(agent => 
+        agent.name.toLowerCase().includes(term.toLowerCase()) ||
+        agent.email.toLowerCase().includes(term.toLowerCase()) ||
+        agent.phone.includes(term)
+      );
+      setFilteredAgents(filtered);
     }
   };
 
@@ -83,19 +101,45 @@ const Agents = () => {
         {error && <Alert variant="danger" dismissible onClose={() => setError('')} className="border-0 shadow-sm">{error}</Alert>}
         {success && <Alert variant="success" dismissible onClose={() => setSuccess('')} className="border-0 shadow-sm">{success}</Alert>}
 
+        <Card className="border-0 shadow-sm mb-3">
+          <Card.Body className="py-3">
+            <Row className="align-items-center">
+              <Col md={8}>
+                <InputGroup>
+                  <InputGroup.Text className="bg-light border-end-0">
+                    <i className="fas fa-search text-muted"></i>
+                  </InputGroup.Text>
+                  <Form.Control
+                    type="text"
+                    placeholder="Search agents by name, email, or phone..."
+                    value={searchTerm}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    className="border-start-0"
+                  />
+                </InputGroup>
+              </Col>
+              <Col md={4} className="text-end">
+                <small className="text-muted">
+                  Showing {filteredAgents.length} of {agents.length} agents
+                </small>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+
         <Card className="border-0 shadow-sm">
           <Card.Header className="bg-white border-0 py-3">
             <div className="d-flex align-items-center justify-content-between">
               <h5 className="mb-0 fw-bold">All Agents</h5>
-              <Badge bg="primary" className="fs-6">{agents.length} Total</Badge>
+              <Badge bg="primary" className="fs-6">{filteredAgents.length} Results</Badge>
             </div>
           </Card.Header>
           <Card.Body className="p-0">
-            {agents.length === 0 ? (
+            {filteredAgents.length === 0 ? (
               <div className="text-center py-5">
                 <i className="fas fa-users text-muted mb-3" style={{fontSize: '3rem'}}></i>
-                <h5 className="text-muted">No agents found</h5>
-                <p className="text-muted">Add your first agent to get started!</p>
+                <h5 className="text-muted">{agents.length === 0 ? 'No agents found' : 'No matching agents'}</h5>
+                <p className="text-muted">{agents.length === 0 ? 'Add your first agent to get started!' : 'Try adjusting your search criteria'}</p>
               </div>
             ) : (
               <Table responsive className="mb-0">
@@ -116,7 +160,7 @@ const Agents = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {agents.map((agent, index) => (
+                  {filteredAgents.map((agent, index) => (
                     <tr key={agent.id || agent._id || index} className={index % 2 === 0 ? 'bg-white' : 'bg-light bg-opacity-50'}>
                       <td className="py-3 fw-semibold">{agent.name}</td>
                       <td className="py-3 text-muted">{agent.email}</td>
